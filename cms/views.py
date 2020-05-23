@@ -41,6 +41,9 @@ class IndexView(ListView):
     template_name = 'cms/index.html'
     paginate_by = 3
 
+    def get_queryset(self):
+        return Post.objects.order_by('published_at').reverse()
+
 
 class TagListView(ListView):
     queryset = Tag.objects.annotate(num_posts=Count(
