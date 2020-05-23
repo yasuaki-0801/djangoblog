@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'django.contrib.sitemaps',
     'django_summernote',
-    'storages',
+    #'storages',
     'cms',
 
 ]
@@ -156,4 +156,4 @@ SITE_ID = 1
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
 
-#from website.aws.conf import *
+from website.aws.conf import *
