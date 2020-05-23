@@ -157,4 +157,5 @@ SITE_ID = 1
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
 
+GOOGLE_ANALYTICS_TRACKING_ID = 'UA-120543748-1'
 from website.aws.conf import *
