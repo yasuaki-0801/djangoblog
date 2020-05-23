@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'django.contrib.sitemaps',
     'django_summernote',
-    #'storages',
+    'storages',
     'cms',
 
 ]
