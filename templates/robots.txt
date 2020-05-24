@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://werbsite.s3-ap-northeast-1.amazonaws.com/sitemap/sitemap.xml

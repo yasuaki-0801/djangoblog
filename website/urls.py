@@ -23,6 +23,7 @@ from .feeds import LatestPostsFeed
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
+from django.http import HttpResponse
 
 from .sitemaps import (
     BlogPostSitemap,
@@ -38,12 +39,13 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('cms.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
-   # path('test', 'https://werbsite.s3-ap-northeast-1.amazonaws.com/sitemap/sitemap.xml'),
     path('latest/feed/', LatestPostsFeed()),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('summernote/', include('django_summernote.urls')), 
     path('i18n/', include('django.conf.urls.i18n')),
+    #path(r'', include('robots_txt.urls')),
     #url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    url(r'^robots.txt', lambda x: HttpResponse("User-Agent: *\nDisallow:", content_type="text/plain"), name="robots_file"),
     prefix_default_language=False   
 )
 
