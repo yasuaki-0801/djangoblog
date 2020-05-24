@@ -23,7 +23,7 @@ from .feeds import LatestPostsFeed
 from django.conf.urls import include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
-from django.http import HttpResponse
+from django.views.generic.base import TemplateView
 
 from .sitemaps import (
     BlogPostSitemap,
@@ -45,7 +45,7 @@ urlpatterns = i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     #path(r'', include('robots_txt.urls')),
     #url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-    url(r'^robots.txt', lambda x: HttpResponse("User-Agent: *\nDisallow:", content_type="text/plain"), name="robots_file"),
+    url(r"robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),),
     prefix_default_language=False   
 )
 
