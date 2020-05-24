@@ -38,6 +38,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('cms.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
+   # path('test', 'https://werbsite.s3-ap-northeast-1.amazonaws.com/sitemap/sitemap.xml'),
     path('latest/feed/', LatestPostsFeed()),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('summernote/', include('django_summernote.urls')), 

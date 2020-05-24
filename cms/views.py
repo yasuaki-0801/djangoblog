@@ -22,6 +22,9 @@ def index_template(request):
 
 def aboutme(request):
     return render(request, 'cms/aboutme.html')
+
+def gs_sitemap(request):
+    return redirect('https://werbsite.s3-ap-northeast-1.amazonaws.com/sitemap/sitemap.xml')
     
 
 class PostDetailView(DetailView):
